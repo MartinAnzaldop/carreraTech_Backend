@@ -15,6 +15,7 @@ dbConnection();
 
 //RUTAS
 app.use('/api/test', require('./routes/testRoute.js'))
+app.use('/api/comentario', require('./routes/comentarioRoute.js'))
 
 
 
