@@ -8,6 +8,7 @@ router.post('/', comentarioController.createComentario);
 router.get('/', comentarioController.getComentario);
 router.get('/:id', comentarioController.getTestById);
 router.delete('/:id', comentarioController.deleteComentario);
+router.put('/:id', comentarioController.updateStatus);
 
 
 

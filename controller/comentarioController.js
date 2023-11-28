@@ -43,4 +43,24 @@ exports.deleteComentario = async(req, res) => {
         console.log(error);
         res.status(500).json({ message: 'Error al eliminar el comentario' });
     }
+
+}
+
+//peticion para cambiar el estatus de un comentario si esta desactivado a activado y de activado a desactivvado por ID
+exports.updateStatus = async(req, res) => {
+    try {
+        const comentario = await Comentario.findById(req.params.id);
+        if(comentario.estatus=="desactivado"){
+            comentario.estatus="activado";
+            await comentario.save();
+            res.status(200).json({ message: 'Mensaje activado' });
+        }else{
+            comentario.estatus="desactivado";
+            await comentario.save();
+            res.status(200).json({ message: 'Mensaje desactivado' });
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Error al actualizar el estatus' });
+    }
 }
