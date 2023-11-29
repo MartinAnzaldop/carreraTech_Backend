@@ -4,7 +4,7 @@
   "description": "backend de la app carreratech",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "martin peña",
@@ -17,4 +17,6 @@
   "devDependencies": {
     "nodemon": "^2.0.22"
   }
+  
 }
+
